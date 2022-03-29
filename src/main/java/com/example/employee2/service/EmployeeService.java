@@ -110,8 +110,6 @@ public class EmployeeService {
 
 
 
-
-
     //Task1
     public Set<EmployeeModel> getCountry(String country){
         List<AddressDetails> ad = addressDetailsRepository.findByCountryIgnoreCase(country);
@@ -119,6 +117,7 @@ public class EmployeeService {
                 map(AddressDetails::getEmployeeDetails).collect(Collectors.toSet());
         return  ed.stream().map(this::getEmployeeModel).collect(Collectors.toSet());
     }
+
 
     //Task2
     public Set<EmployeeModel> getCity(String city1, String city2){
