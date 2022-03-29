@@ -40,11 +40,11 @@ public class EmployeeController {
     public List<EmployeeReport> getEmployeeSalaryDetails(){
         return employeeService.getEmployeeSalary();
     }
-    @GetMapping("/salary/{payable}")
+    @RequestMapping(value = "/salary/{payable}",method = RequestMethod.GET)
     public List<EmployeeReport> getEmployeeSalaryDetails(@PathVariable String payable){
         return employeeService.getSalaryPayable(payable);
     }
-    @GetMapping("/attend/{date}")
+    @RequestMapping(value = "/attend/{date}",method = RequestMethod.GET)
     public List<EmployeeOffDays> getEmployeeAttend(@PathVariable String date){
         return employeeService.getEmployeeOffDays(date);
     }
